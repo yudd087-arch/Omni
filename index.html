@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>Omni Flash Generator</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div class="brand-mark">OF</div>
+      <div>
+        <p class="eyebrow">AI VIDEO STUDIO</p>
+        <h1>Omni Flash <span>Generator</span></h1>
+      </div>
+      <div class="status-pill"><i></i> Online</div>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">NEXABOT · OMNI FLASH 1.2</p>
+      <h2>Ubah referensi jadi video.</h2>
+      <p class="sub">Masukkan foto, video referensi, dan prompt. Hasilnya akan muncul di halaman ini.</p>
+    </section>
+
+    <form id="generatorForm">
+      <section class="panel">
+        <div class="section-heading">
+          <div><span class="step">01</span><h3>Foto referensi</h3></div>
+          <span class="hint">Wajib</span>
+        </div>
+        <label class="upload-box" for="imageInput" id="imageDrop">
+          <input id="imageInput" name="image" type="file" accept="image/*" required>
+          <span class="upload-icon">▧</span>
+          <strong>Pilih foto</strong>
+          <span class="muted">JPG, PNG, WEBP · Maks. 50 MB</span>
+          <img id="imagePreview" alt="Pratinjau foto" hidden>
+          <span class="file-name" id="imageName"></span>
+        </label>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div><span class="step">02</span><h3>Video referensi</h3></div>
+          <span class="hint">Wajib</span>
+        </div>
+        <label class="upload-box" for="videoInput" id="videoDrop">
+          <input id="videoInput" name="video" type="file" accept="video/*" required>
+          <span class="upload-icon">▶</span>
+          <strong>Pilih video</strong>
+          <span class="muted">MP4 atau format video lain · Maks. 50 MB</span>
+          <video id="videoPreview" controls playsinline hidden></video>
+          <span class="file-name" id="videoName"></span>
+        </label>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div><span class="step">03</span><h3>Prompt</h3></div>
+          <span class="hint">Wajib</span>
+        </div>
+        <textarea id="promptInput" name="prompt" rows="5" maxlength="5000"
+          placeholder="Jelaskan gerakan, pose, kamera, dan detail video yang kamu inginkan..." required></textarea>
+        <div class="textarea-foot"><span>Gunakan instruksi yang jelas dan spesifik.</span><span id="charCount">0/5000</span></div>
+      </section>
+
+      <button class="generate" id="generateButton" type="submit">
+        <span>✦</span> Generate video
+      </button>
+    </form>
+
+    <section class="panel result-panel" id="resultPanel" hidden>
+      <div class="section-heading">
+        <div><span class="step">04</span><h3>Hasil video</h3></div>
+        <span class="hint" id="resultBadge">Memproses</span>
+      </div>
+      <div class="progress-wrap" id="progressWrap">
+        <div class="spinner"></div>
+        <strong id="statusTitle">Mengirim permintaan...</strong>
+        <p id="statusText" class="muted">Mohon tunggu. Jangan tutup halaman ini.</p>
+      </div>
+      <video id="resultVideo" controls playsinline hidden></video>
+      <a class="download" id="downloadLink" href="#" hidden download="hasil-omni-flash.mp4">Unduh video MP4</a>
+      <p class="error" id="errorText" hidden></p>
+    </section>
+
+    <footer>
+      <span>Omni Flash Generator</span>
+      <span>API Key tersimpan di server</span>
+    </footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

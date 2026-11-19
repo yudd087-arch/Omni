@@ -1,0 +1,77 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --panel: #141c30;
+  --panel-2: #0f1729;
+  --line: #26334d;
+  --text: #f5f7fb;
+  --muted: #9aa8bf;
+  --accent: #9b8cff;
+  --accent-2: #6ee7d2;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; color: var(--text);
+  background: radial-gradient(ellipse at 50% -15%, #26335a 0, transparent 48%), var(--bg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.shell { width: min(100% - 28px, 720px); margin: 0 auto; padding: 26px 0 34px; }
+.top { display:flex; align-items:center; gap:12px; }
+.brand-mark {
+  width:44px; height:44px; display:grid; place-items:center; border-radius:14px;
+  background:linear-gradient(135deg,var(--accent),#5c6bff); font-weight:900; letter-spacing:-1px;
+}
+.eyebrow { margin:0 0 4px; color:var(--accent-2); font-size:10px; font-weight:800; letter-spacing:1.8px; }
+h1 { margin:0; font-size:17px; letter-spacing:-.5px; }
+h1 span { color:#b7b0ff; }
+.status-pill { margin-left:auto; padding:7px 10px; border:1px solid var(--line); border-radius:99px; color:var(--muted); font-size:11px; }
+.status-pill i { display:inline-block; width:6px; height:6px; margin-right:5px; border-radius:50%; background:#6ee7a8; }
+.intro { padding:42px 2px 24px; }
+.intro h2 { margin:8px 0; font-size:clamp(27px,7vw,39px); line-height:1.08; letter-spacing:-1.5px; }
+.sub { max-width:510px; margin:0; color:var(--muted); line-height:1.6; font-size:14px; }
+.panel { margin:13px 0; padding:19px; border:1px solid var(--line); border-radius:18px; background:linear-gradient(145deg,rgba(25,35,58,.96),rgba(17,25,43,.96)); }
+.section-heading { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+.section-heading > div { display:flex; align-items:center; gap:10px; }
+.step { display:grid; place-items:center; width:27px; height:27px; border-radius:9px; color:#d3ceff; background:#302d58; font-size:11px; font-weight:800; }
+h3 { margin:0; font-size:15px; }
+.hint { color:var(--muted); font-size:11px; }
+.upload-box {
+  position:relative; min-height:150px; padding:22px 14px; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:7px; text-align:center;
+  border:1px dashed #526080; border-radius:14px; background:rgba(8,14,27,.38); cursor:pointer;
+}
+.upload-box:focus-within, .upload-box:hover { border-color:var(--accent); background:rgba(155,140,255,.06); }
+.upload-box input { position:absolute; width:1px; height:1px; opacity:0; }
+.upload-icon { color:#c2baff; font-size:27px; }
+.upload-box strong { font-size:13px; }
+.muted, .file-name { color:var(--muted); font-size:11px; }
+.file-name { max-width:100%; overflow-wrap:anywhere; }
+.upload-box img, .upload-box video { display:block; max-width:100%; max-height:220px; border-radius:10px; margin-top:8px; }
+textarea {
+  width:100%; resize:vertical; padding:14px; border:1px solid var(--line); border-radius:12px;
+  outline:none; color:var(--text); background:var(--panel-2); font:inherit; font-size:13px; line-height:1.55;
+}
+textarea:focus { border-color:var(--accent); }
+.textarea-foot { display:flex; justify-content:space-between; gap:8px; margin-top:8px; color:var(--muted); font-size:10px; }
+.generate, .download {
+  width:100%; min-height:53px; display:flex; align-items:center; justify-content:center; gap:9px;
+  border:0; border-radius:14px; color:#101326; background:linear-gradient(100deg,#b8adff,#7fe8d7);
+  font-size:14px; font-weight:850; cursor:pointer; text-decoration:none;
+}
+.generate:disabled { opacity:.55; cursor:wait; }
+.result-panel { margin-top:17px; }
+.progress-wrap { padding:25px 8px; display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center; }
+.progress-wrap p { margin:0; }
+.spinner { width:27px; height:27px; border:3px solid #39435f; border-top-color:var(--accent-2); border-radius:50%; animation:spin .8s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+#resultVideo { width:100%; max-height:500px; border-radius:12px; background:#05070d; }
+.download { margin-top:14px; }
+.error { padding:12px; border:1px solid #854c5b; border-radius:10px; color:#ffb7c5; background:#351d2a; font-size:12px; overflow-wrap:anywhere; }
+footer { display:flex; justify-content:space-between; gap:10px; padding:20px 3px 0; color:#73809a; font-size:10px; }
+[hidden] { display:none !important; }
+@media (max-width:480px) {
+  .shell { width:min(100% - 22px,720px); padding-top:19px; }
+  .intro { padding-top:34px; }
+  .panel { padding:15px; border-radius:15px; }
+  footer { font-size:9px; }
+}

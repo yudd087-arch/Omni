@@ -1,0 +1,15 @@
+{
+  "name": "omni-flash-webapp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mobile-friendly Omni Flash video generator using Nexabot API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}
